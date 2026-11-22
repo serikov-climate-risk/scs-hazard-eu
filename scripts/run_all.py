@@ -14,11 +14,11 @@ SRC = Path(sys.argv[1]) if len(sys.argv) > 1 else Path.home() / "z_data" / "z11"
 WIND = Path.home() / "de-windstorm-risk" / "results"
 RES = ROOT / "results"
 RES.mkdir(exist_ok=True)
-START, END = "1991-01-01", "2025-12-31"
-YEARS = 35
+START, END = "1991-01-01", "2011-12-31"   # DWD observer-based phenomena records effectively end in 2011 (network automated)
+YEARS = 21
 
 long, st = dwd.load_all(SRC, START, END)
-stable = dwd.stable_stations(long, START, END, 0.9)
+stable = dwd.stable_stations(long, START, END, 0.85)
 out = {"stations_all": int(long.STATIONS_ID.nunique()), "stations_stable": len(stable), "period": [START, END]}
 tg, ng = dwd.daily_index(long, stable, "GEWITTER")
 hg, nh = dwd.daily_index(long, stable, "HAGEL")
@@ -56,7 +56,7 @@ out["convective"] = res
 # comparison is of footprint breadth, not of loss.
 try:
     ev = pd.read_csv(WIND / "events.csv")
-    wshare = (ev.stations_above_v98 / 156.0).groupby(ev.season).max()
+    wshare = (ev.stations_above_v98 / 156.0)[ev.season <= 2011].groupby(ev.season[ev.season <= 2011]).max()
     tshare = hazard.warm_season(d.thunder.dropna()).groupby(lambda t: t.year).max()
     hshare = hazard.warm_season(d.hail.dropna()).groupby(lambda t: t.year).max()
     out["annual_max_breadth"] = {name: {"median": float(x.median()), "p90": float(x.quantile(0.9)), "max": float(x.max()), "years": int(len(x))}
