@@ -1,0 +1,94 @@
+{
+  "stations_all": 236,
+  "stations_stable": 5,
+  "period": [
+    "1991-01-01",
+    "2025-12-31"
+  ],
+  "median_active_stations": 5.0,
+  "thunder_days_per_year": {
+    "mean": 25.822505159958617,
+    "p10": 24.101258192086714,
+    "p90": 27.591862146055195
+  },
+  "hail_days_per_year": {
+    "mean": 0.9645603669602003,
+    "p10": 0.670506587736307,
+    "p90": 1.4830399745983973
+  },
+  "south_over_north_thunder": 1.1002736841237848,
+  "peak_month_thunder": 7,
+  "season_share_thunder_JJA": 0.6108481655964526,
+  "convective": {
+    "thunder": {
+      "p99_threshold": 1.0,
+      "days_above_per_year": 0.0,
+      "dispersion": {
+        "mean": 0.0,
+        "var_over_mean": NaN,
+        "nb_size": Infinity
+      },
+      "gpd": {
+        "threshold": 0.6,
+        "peaks": 240,
+        "rate_per_year": 6.857142857142857,
+        "shape": -2.287734088204063,
+        "scale": 0.9150936352816254,
+        "rl_2": 0.9989988247302807,
+        "rl_5": 0.9998769365203941,
+        "rl_10": 0.9999747969786168,
+        "rl_20": 0.9999948384988879,
+        "rl_50": 0.9999993655533591,
+        "rl_100": 0.9999998700672831
+      },
+      "max_day": "1991-08-08",
+      "max_share": 1.0,
+      "trend_days_above_per_decade": 0.0
+    },
+    "hail": {
+      "p99_threshold": 0.2,
+      "days_above_per_year": 0.34285714285714286,
+      "dispersion": {
+        "mean": 0.34285714285714286,
+        "var_over_mean": 1.3627450980392155,
+        "nb_size": 0.9451737451737456
+      },
+      "gpd": {
+        "threshold": 0.0,
+        "peaks": 108,
+        "rate_per_year": 3.085714285714286,
+        "shape": -0.1641235392113498,
+        "scale": 0.2850357181916997,
+        "rl_2": 0.44844259057457325,
+        "rl_5": 0.6283152618480908,
+        "rl_10": 0.7475008196859713,
+        "rl_20": 0.8538704194676071,
+        "rl_50": 0.9771359488419882,
+        "rl_100": 1.0588130083788823
+      },
+      "max_day": "2022-09-19",
+      "max_share": 1.0,
+      "trend_days_above_per_decade": 0.22128851540616012
+    }
+  },
+  "annual_max_breadth": {
+    "windstorm_stations_above_v98": {
+      "median": 0.8589743589743589,
+      "p90": 0.9551282051282052,
+      "max": 0.9871794871794872,
+      "years": 35
+    },
+    "thunderstorm_stations_reporting": {
+      "median": 1.0,
+      "p90": 1.0,
+      "max": 1.0,
+      "years": 35
+    },
+    "hail_stations_reporting": {
+      "median": 0.2,
+      "p90": 0.7600000000000009,
+      "max": 1.0,
+      "years": 35
+    }
+  }
+}
